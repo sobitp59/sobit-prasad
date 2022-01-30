@@ -8,3 +8,13 @@
 - GIT AND GITHUB
 - BOOTSTRAP
 ```
+#### SOME USEFUL COMMANDS
+```
+show/hide terminal : ctrl + `
+show/hide sidebar : ctrl + B
+open file : ctrl + O
+command pallete : ctrl+shift+P
+jump to line number : ctrl + G
+jump to symbol : ctrl+shift+O
+toggle wrap : 
+```

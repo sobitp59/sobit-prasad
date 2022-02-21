@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+
+    <title>javascript : behind the scene | sobit prasad</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-brand"> SobitPrasad<span class="nav-brand-dot">.</span></div>
+            <ul class="nav-list">
+                <li class="list"><a class="link" href="index.html">home</a></li>
+                <li class="list"><a class="link" href="projects.html">projects</a></li>
+                <li class="list"><a class="link link-active" href="blogs.html">blogs</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header -->
+        <header class="blog-header">
+            <img class="blog-header-image" src="blogimages/javascript-hoisting.png" alt="header-img" srcset="">
+            
+            <div class="blog-intro">
+                <h2 class="blog-header-intro">hoisting in javascript<span class="blog-header-dot">.</span></h2><br>
+                <p class="sm">18 February, 2022 | Sobit Prasad</p>
+                <!-- <article class="blog-blog"> -->
+                   <div class="blog">
+                       <!-- introduction -->
+                        <h4 class="blog-topics">introduction<span class="blog-topics-dot">.</span></h4>
+                        <p class="blog-detail">First of all, let's understand the term 'HOISTING'. Hoisting means lifting up. For example, when we hoist our flag or when a crane lifts something, it's hoisting(lifting up) that thing, Right? Now, before proceeding further, I will recommend you to read my <a class="prev-blog" href="javascript-behind-the-scene.html">previous blog</a>, because both the blogs are connected to each other and it will help you to understand the concept of this blog very easily. But let's revise a few concepts from the previous blog.</p>
+                        <p class="blog-detail">In the <a class="prev-blog" href="javascript-behind-the-scene.html">previous blog</a>, we have understood that whenever we run our code an Execution Context is created and inside that context, we have two phases - <span class="blog-bold">Memory Creation Phase</span> and <span class="blog-bold">Code Creation Phase</span>. Memory Creation Phase runs first and allocates memory/space to all the variables and functions and after that Code Execution Phase runs and it assigns the actual values to its corresponding variables. But why I am saying here <span class="blog-bg">variables</span> only, don't worry we will understand it later in this blog.</p>
+                  
+                        <!-- what happens when we run our JavaScript program? -->
+                        <h4 class="blog-topics">variable hoisting in javascript<span class="blog-topics-dot">.</span></h4>
+                        <p class="blog-detail">Now coming back again to the <span class="blog-bold">Memory Creation Phase</span>. We know that when we run our code Javascript Engine scans the whole code and allocates memory to all the variables and functions. But, in the case of variables, it assigns with a default value of <span class="blog-bg">undefined</span> in Memory Creation Phase only, even before the execution of our code. Now let's understand all these concepts with the help of examples.</p>    
+                        <h5 class="blog-topics-ex">variable hoisting: using the keyword <span class="blog-bg">var</span><span class="blog-topics-dot">.</span></h5>
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line"><span class="code-col">var</span> exOne = 'JS is fun';</li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(exOne);</li>
+                            <li class="blog-code-line"><span class="code-col">//Output : JS is fun</span</li>
+                        </ul>
+                        <p class="blog-detail">What do you think, what will be the output? It's simple, Right? It will give <span class="blog-bg blog-bold">JS is fun</span> in the console. Now let's move to the next program.</p>    
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(exTwo);</li>
+                            <li class="blog-code-line"><span class="code-col">var</span> exTwo = 'WebDev is fun';</li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(exTwo);</li>
+                        </ul>
+                        <p class="blog-detail">Now, what do you think, what will be the output? But before giving you the answer I want to remind you of something and that is 'Memory Creation Phase'. We know in Memory Creation Phase, Javascript Engine will allocate memory and the default value <span class="blog-bg">undefined</span> to its variable before executing the program. So, let's find out the answer.</p>    
+                        <p class="blog-detail">First, let's see the code above, here Javascript Engine will go to line 1 and find <span class="blog-bg">console.log(exTwo);</span>. Now, it finds the variable <span class="blog-bg">exTwo</span> but till now we haven't assigned any values to it and also trying to console log <span class="blog-bg">exTwo</span>, Right? So, it will assign the default value i.e. <span class="blog-bg">undefined</span> to <span class="blog-bg">exTwo</span>. Now, JS Engine will move to line 2. Here, we are assigning <span class="blog-bg blog-bold">WebDev is fun</span> to variable <span class="blog-bg">exTwo</span>, so it will hold this value. Now, JS Engine will move to line 3, here we are again trying to console log variable <span class="blog-bg">exTwo</span>. Now, it will print <span class="blog-bg blog-bold">WebDev is fun</span>, because here we have assigned <span class="blog-bg blog-bold">WebDev is fun</span> to variable <span class="blog-bg">exTwo</span>. So our output will look something like this,</p>    
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line"><span class="code-col">//Output :</span></li>
+                            <li class="blog-code-line"><span class="code-col">//undefined</span></li>
+                            <li class="blog-code-line"><span class="code-col">//WebDev is fun</span></li>
+                        </ul>
+                        <p class="blog-detail">In the above program, we tried to console log variable <span class="blog-bg">exTwo</span> before declaring it. But, what if we try to console log the variable <span class="blog-bg">exTwo</span> without declaring it. So, what do think, what will be the output when we run the below code?</p>    
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(exTwo);</li>
+                        </ul>
+                        <p class="blog-detail">So, here also JS Engine will scan the whole program and it finds <span class="blog-bg">exTwo</span> but there is no declaration for <span class="blog-bg">exTwo</span>, so JS Engine will not assign any memory to it and throws an error.</p>    
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line ex-line"><span class="code-col">Uncaught ReferenceError: exTwo is not defined</span></li>
+                        </ul>
+                        <p class="blog-detail blog-detail-ex">Difference between <span class="blog-bg">undefined</span> and <span class="blog-bg">not defined</span>. <span class="blog-bold">undefined</span>: we will get <span class="blog-bg">undefined</span> as an output when we try to access the variable before its being initialized or without initializing the variable. On the other hand, <span class="blog-bold">not defined</span> is an error, we will face when we try to access the variable before declaring it.</p>    
+                        <p class="blog-detail">Think it of as a stranger whom you don't know, will you let him/her in your house, No!, Right? Now let's understand hoisting through the 'let' and 'const' keywords.</p>    
+                        
+                        <h5 class="blog-topics-ex">variable hoisting: using the keywords <span class="blog-bg">let</span> and <span class="blog-bg">const</span><span class="blog-topics-dot">.</span></h5>
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line ex-line"><span class="code-col">console</span>.log(exThree);</li>
+                            <li class="blog-code-line ex-line"><span class="code-col">let </span>exThree = 'Hi!';</li>
+                        </ul>
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line ex-line"><span class="code-col">console</span>.log(exFour);</li>
+                            <li class="blog-code-line ex-line"><span class="code-col">const </span>exFour = 'Bye!';</li>
+                        </ul>
+                        <p class="blog-detail">When we declare variables using keywords <span class="blog-bg">let</span>let and <span class="blog-bg">const</span>, it will work as same as the keyword <span class="blog-bg">var</span>. But when we try to access the variable declared with keywords <span class="blog-bg">let</span> and <span class="blog-bg">const</span> before initializing it, it will throw an error.</p>    
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line ex-line"><span class="code-col"> Uncaught ReferenceError: Cannot access 'exThree' before initialization
+                            </span></li>
+                        </ul>
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line ex-line"><span class="code-col"> Uncaught ReferenceError: Cannot access 'exFour' before initialization
+                            </span></li>
+                        </ul>
+                        <p class="blog-detail">But why do these happen? In the case of the keyword <span class="blog-bg">var</span>, when we try to access the variable before initializing it we get <span class="blog-bg">undefined</span>, but with keywords <span class="blog-bg">let</span> and <span class="blog-bg">const</span> we get an error. This happens because of the <span class="blog-bold">'Temporal Dead Zone'</span>. I will not cover this topic in this blog but don't worry we are going to play more with <span class="blog-bg">let</span>let and <span class="blog-bg">const</span> and <span class="blog-bold">Temporal Dead Zone</span> in the next blog. Now let's understand hoisting from the eyes of function.</p>    
+                        
+                        
+                        <h4 class="blog-topics">functional hoisting in javascript<span class="blog-topics-dot">.</span></h4>
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line">funcOne();</li>
+                            <li class="blog-code-line"><span class="code-col">function</span> funcOne(){</li>
+                                <li class="blog-code-line"><span class="code-col">console</span>.log('function one');</li>
+                                <li class="blog-code-line">}</li>
+                                <li class="blog-code-line"><span class="code-col">//Output : function one</span></li>
+                        </ul>
+                        <p class="blog-detail">What will be the output? Again, it's very simple, Right? We have used functions like it before so many times. But how does it possible to access a function even before declaring it. Have you remembered the last line of the second paragraph? So here is the answer, because in the case of functions, in Memory Creation Phase, JS Engine allocates the memory and the whole code inside that function as the value. Now when this function is invoked before or after the declaration of that function an Execution Context is created and in Memory Creation Phase inside this Execution Context, it will simply print the <span class="blog-bold blog-bg">function one</span> in the console and after that, this Execution Context will be deleted and the control will be transferred to Global Execution Context. Now if don't understand yet, just simply copy and paste the below code and open the console, you will find your answer.</p>    
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line">funcOne();</li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(funcOne);</li>
+                            <li class="blog-code-line"><span class="code-col">function</span> funcOne(){</li>
+                                <li class="blog-code-line"><span class="code-col">console</span>.log('I am function one');</li>
+                                <li class="blog-code-line">}</li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(funcOne);</li>
+                        </ul>
+                        <p class="blog-detail">You will get output in the console as :</p>    
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line">f <span class="code-col">function</span>(){</li>
+                                <li class="blog-code-line"><span class="code-col">console</span>.log('I am function one');</li>
+                            <li class="blog-code-line">}</li>
+                            <li class="blog-code-line">f <span class="code-col">function</span>(){</li>
+                                <li class="blog-code-line"><span class="code-col">console</span>.log('I am function one');</li>
+                                <li class="blog-code-line">}</li>
+                            </ul>
+                        <p class="blog-detail">Now, you know how we are able to access the function even before declaring/initializing it. But, what if we write the same function using the <span class="blog-bold">fat-arrow</span> or <span class="blog-bold">anonymous</span> function. So, let's find out our answer. We have our code below,</p>    
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line"><span class="code-col">//using fat-arrow function</span></li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(funcOne);</li>
+                            <li class="blog-code-line"><span class="code-col">var</span> funcOne = () => {</li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log('I am function one');</li>
+                                <li class="blog-code-line">}</li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(funcOne);</li>
+                            <li class="blog-code-line">funcOne();</li>
+                        </ul>
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line"><span class="code-col">//using anonymous function</span></li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(funcOne);</li>
+                            <li class="blog-code-line"><span class="code-col">var</span> funcOne = <span class="code-col">function</span>(){</li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log('I am function one');</li>
+                            <li class="blog-code-line">}</li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(funcOne);</li>
+                            <li class="blog-code-line">funcOne();</li>
+                        </ul>
+                        <p class="blog-detail">And here I am asking for your answer again, so what will be your answer. Yes, you guessed it right, here <span class="blog-bg">funcOne</span> will act as a variable in both cases and it will output in the console as :</p>    
+                        <ul class="blog-code-head">
+                            <li class="blog-code-line">undefined</li>
+                            <li class="blog-code-line"><span class="code-col">console</span>.log(funcOne);</li>
+                            <li class="blog-code-line">f (){</li>
+                                <li class="blog-code-line"><span class="code-col">console</span>.log('I am function one');</li>
+                                <li class="blog-code-line">}</li>
+                                <li class="blog-code-line">I am function one</li>
+                            </ul>
+                        <p class="blog-detail">So, in both(using fat arrow and anonymous functions) the programs above, we have <span class="blog-bg">funcOne</span> as a variable. So when JS Engine will scan these programs, it will allocate memory as well as the default value of <span class="blog-bg">undefined</span> for line one. Now it will move to the next line and will assign the whole function to variable <span class="blog-bg">funcOne</span>. In the second-last line, we are console logging the variable <span class="blog-bg">funcOne</span> which holds the entire function in it, so it will print the whole code inside that function. Now, in the last line we are invoking <span class="blog-bg">funcOne</span> which will now act as a function rather than a variable and again the whole cycle will repeat.</p>    
+                        <p class="blog-detail">So, that's it guys in this blog. In the next blog, we will talk about the variable declared using keywords <span class="blog-bg">let</span> and <span class="blog-bg">const</span>, and also we will travel around the <span class="blog-bold">Temporal Dead Zone</span>. Don't worry we will not die there. So, till then see you in the next blog.</p>    
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+               <!-- </article>  -->
+            </div>
+        </header>
+
+        <!-- Main -->
+       
+
+        <!-- Footer -->
+        <footer class="footer">
+            <h3 class="footer-head">connect with me<span>.</span></h3>
+            <ul class="social">
+                <li class="social-list"><a class="social-link" href="https://www.linkedin.com/in/sobit-prasad">linkedin<span>.</span></a></li>
+                <li class="social-list"><a class="social-link" href="https://github.com/sobitp59">github<span>.</span></a></li>
+                <li class="social-list"><a class="social-link" href="https://twitter.com/sobit_prasad">twitter<span>.</span></a></li>
+            </ul>
+        </footer>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+
+    <title>javascript : behind the scene | sobit prasad</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-brand"> SobitPrasad<span class="nav-brand-dot">.</span></div>
+            <ul class="nav-list">
+                <li class="list"><a class="link" href="index.html">home</a></li>
+                <li class="list"><a class="link" href="projects.html">projects</a></li>
+                <li class="list"><a class="link link-active" href="blogs.html">blogs</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header -->
+        <header class="blog-header">
+            <img class="blog-header-image" src="blogimages/JavaScript-Behind-The-Scene-Banner.png" alt="header-img" srcset="">
+            
+            <div class="blog-intro">
+                <h2 class="blog-header-intro">javascript : behind the scene<span class="blog-header-dot">.</span></h2><br>
+                <p class="sm">14 February, 2022 | Sobit Prasad</p>
+                <!-- <article class="blog-blog"> -->
+                   <div class="blog">
+                       <!-- introduction -->
+                        <h4 class="blog-topics">introduction<span class="blog-topics-dot">.</span></h4>
+                        <p class="blog-detail">I think we all like to watch <span class="blog-bold">BTS(Behind The Scene)</span>, whether it is a BTS of a movie or it could be BTS of your favorite show. But have you ever imagined if we could watch behind the scene of a programming language?
+                            Yes, you heard it right we can see BTS of a programming language. So in this blog, we will see <span class="blog-bold">how javascript actually works behind the scene?</span></p>
+                  
+                        <!-- what happens when we run our JavaScript program? -->
+                        <h4 class="blog-topics">what happens when we run our JavaScript program<span class="blog-topics-dot">?</span></h4>
+                        <p class="blog-detail">So when you run your beautiful code in JavaScript, an <span class="blog-bold">Execution Context</span> is created. So if you are wondering what the heck is this Execution Context, you can think it of like the movie set where all the shots of the movies are to be taken. So everything in JavaScript happens inside this Execution Context.</p>    
+                        <p class="blog-detail blog-detail-ex">In the Execution Context, there are two main components. </p>    
+                        <p class="blog-detail blog-detail-ex">
+                            I.  Memory Component (also known as <span class="blog-bold">Variable Environment</span>) <br>
+                            II. Code Component (also known as <span class="blog-bold">Thread of Execution</span>)
+                         </p> 
+                         <h5 class="blog-topics-ex">memory component<span class="blog-topics-dot">.</span></h5>
+                         <p class="blog-detail">In Memory Component, all the values of the variables are assigned in a key-value pair as simple as that.</p>    
+                         <h5 class="blog-topics-ex">code component<span class="blog-topics-dot">.</span></h5>
+                         <p class="blog-detail">In Code Component, our code gets executed line by line in a specific order. We will understand it more deeply when we will talk about the phases that occur when we run our code. But for now, just keep in mind that when we run our code, an Execution Context is created and it has two components - memory and code component.</p>    
+                         <img class="blog-header-image" src="blogimages/blog-img-1.png" alt="header-img" srcset="">
+
+
+                         <!-- What after the Execution Context? -->
+                         <h4 class="blog-topics">what after the execution context<span class="blog-topics-dot">?</span></h4>
+                         <p class="blog-detail">So far we know that when we run our code an Execution Context is created. Now, our code has to go through two beautiful phases and these phases are - </p>    
+                         <h5 class="blog-topics-ex">phase 1 : memory creation phase<span class="blog-topics-dot">.</span></h5>
+                         <p class="blog-detail">In this phase, our codes get scanned and all the variables are assigned with a value of <span class="blog-bg">undefined</span> but in the case of <span class="blog-bg">function</span>, it stores the whole code inside that function name. We will understand it later with the help of an example.</p>    
+                         <h5 class="blog-topics-ex">phase 2 : code execution phase<span class="blog-topics-dot">.</span></h5>
+                         <p class="blog-detail">In this phase, our codes run line by line in a specific order, and all the actual values of the variable get replaced by <span class="blog-bg">undefined</span> which was held earlier as a placeholder.</p>    
+                         
+                         
+                         <!-- EXAMPLE: Understanding Execution Context with the help of an example -->
+                         <h4 class="blog-topics">example : understanding execution context with the help of an example<span class="blog-topics-dot">.</span></h4>
+                         <p class="blog-detail">I know it might be a little overwhelming, but don't worry let's understand the whole concept with the help of an example. Suppose this is the code we want to execute.</p>    
+                             <ul class="blog-code-head">
+                                 <li class="blog-code-line"><span class="code-col">var</span> a = 7;</li>
+                                 <li class="blog-code-line"><span class="code-col">function</span> cube(n){</li>
+                                    <li class="blog-code-line"><span class="code-col">var</span> b = n*n*n;</li>
+                                    <li class="blog-code-line"><span class="code-col">return</span> b;</li>
+                                    <li class="blog-code-line">}</li>
+                                    <li class="blog-code-line"><span class="code-col">var</span> c = cube(a);</li>
+                                </ul>
+                        <p class="blog-detail">Now when we run this code an Execution Context is created and inside the Execution Context it has to go through two phases - <span class="blog-bold">MEMORY CREATION PHASE</span> and <span class="blog-bold">CODE EXECUTION PHASE</span>. First, it will go through Memory Creation Phase and assign the memory to all the variables. It will assign <span class="blog-bg">undefined</span> to variable <span class="blog-bg">a</span> and <span class="blog-bg">c</span> and also it will assign the whole code inside function <span class="blog-bg">cube</span> to <span class="blog-bg">cube</span>.</p>    
+                        <img class="blog-header-image" src="blogimages/blog-img-2.png" alt="header-img" srcset="">
+                        <p class="blog-detail">Now, here comes the Second Phase i.e. the <span class="blog-bold">Code Execution Phase</span>. In this phase, our code will run line by line. So, when it goes to the first line, it will assign <span class="blog-bg">7</span> to variable <span class="blog-bg">a</span>. Now, it will move to the next line and founds that there is nothing to execute so it will jump to the sixth line. Now, the sixth line is invoking the function <span class="blog-bg">cube</span> with parameter <span class="blog-bg">a</span> which holds the value <span class="blog-bg">7</span>. Now, whenever a new <span class="blog-bg">function</span> is invoked, another <span class="blog-bold">execution context</span> is created inside the previous one and again it will follow the same procedure.</p>    
+                        <img class="blog-header-image" src="blogimages/blog-img-3.png" alt="header-img" srcset="">
+                        <p class="blog-detail">Now in this execution context (i.e. the execution context inside the Global Execution Context), again it has to go through <span class="blog-bold">Memory Creation Phase</span> and <span class="blog-bold">Code Execution Phase</span>. In Memory Creation Phase, it will assign <span class="blog-bg">undefined</span> to variables <span class="blog-bg">n</span> and <span class="blog-bg">b</span>. Now, it will move to the next phase i.e. the Code Execution Phase. In this phase, variable <span class="blog-bg">n</span> will be assigned with value <span class="blog-bg">a</span> because it was the <span class="blog-bg">parameter</span> of the function <span class="blog-bg">cube</span> with variable <span class="blog-bg">c</span>, now <span class="blog-bg">a</span> will be replaced by <span class="blog-bg">7</span> which is taken from the <span class="blog-bold">Global Execution Context</span>. Now finally the output of variable <span class="blog-bg">b</span> i.e <span class="blog-bg">343</span> will be returned to variable <span class="blog-bg">c</span> in the Global Execution Context. Now after that, firstly the <span class="blog-bold">Local Execution Context</span> will be deleted and after returning the value of variable <span class="blog-bg">c</span>, the <span class="blog-bold">Global Execution Context</span> will also be <span class="blog-bg">deleted</span>.</p>    
+                        <img class="blog-header-image" src="blogimages/blog-img-4.png" alt="header-img" srcset="">
+                        <p class="blog-detail">Now, if you are wondering how JavaScript handles all this, I mean this is a lot. Suppose if we invoke a <span class="blog-bg">function</span> inside another <span class="blog-bg">function</span> and again inside another <span class="blog-bg">function</span>, a number of <span class="blog-bold">'Execution Context'</span> will be created, but all this handles by JavaScript very beautifully. So how does it happen? Ladies and Gentlemen, give a big round of applauding to none other than our very dear <span class="blog-bold">CALLSTACK</span>.</p>    
+    
+
+                        <!-- CallStack: The Game Changer -->
+                        <h4 class="blog-topics">callstack: the game changer<span class="blog-topics-dot">.</span></h4>
+                        <img class="blog-header-image" src="blogimages/blog-img-5.png" alt="header-img" srcset="">
+                        <p class="blog-detail">We know that JavaScript is a <span class="blog-bold">synchronous single-threaded</span> programming language and thus it has only one CALLSTACK which means that it can perform only one command at a time in a specific order. So, <span class="blog-bold">what basically CALLSTACK does do?</span></p>    
+                        <p class="blog-detail">CALLSTACK maintains the <span class="blog-bold">order of execution</span> of EXECUTION CONTEXT which means that when we run our code the global execution context that is created at first will be pushed to the stack first and again if another function is invoked/called, it will be pushed at the top of CALLSTACK and again if another function is invoked it will be pushed to the top. Now when the task of the <span class="blog-bg">function</span> at the top is completed it will be removed from the stack and at the end, the Global Execution Context is deleted.</p>    
+                        <p class="blog-detail">This is how it looks Behind The Scene of JavaScript. Isn't it amazing? If you are reading till here, thank you so much for that, I appreciate it. That's it int this blog. Till then, see you in the next blog.</p>    
+
+                        
+
+                    </div>
+               <!-- </article>  -->
+            </div>
+        </header>
+
+        <!-- Main -->
+       
+
+        <!-- Footer -->
+        <footer class="footer">
+            <h3 class="footer-head">connect with me<span>.</span></h3>
+            <ul class="social">
+                <li class="social-list"><a class="social-link" href="https://www.linkedin.com/in/sobit-prasad">linkedin<span>.</span></a></li>
+                <li class="social-list"><a class="social-link" href="https://github.com/sobitp59">github<span>.</span></a></li>
+                <li class="social-list"><a class="social-link" href="https://twitter.com/sobit_prasad">twitter<span>.</span></a></li>
+            </ul>
+        </footer>
+    </div>
+    
+</body>
+</html>

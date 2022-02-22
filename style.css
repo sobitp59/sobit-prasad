@@ -80,6 +80,7 @@
 
 .link:hover{
     background-color: #ffffff18;
+    transition: 0.5s ease all;
 
 
 }
@@ -289,6 +290,7 @@
 
 .social-link:hover{
     background-color: #ffffff18;
+    transition: 0.5s ease all;
     /* background-color: #ffffff28; */
 
 }

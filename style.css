@@ -310,7 +310,8 @@
 /* Media Query - Responsive For Mobile */
 @media (max-width : 478px){
     .container{
-        margin: 0 0.1rem;    
+        margin: 0 0.2rem;
+    
     }
 
     .list .link{
@@ -437,9 +438,9 @@
 }
 
 
-@media (max-width : 750px){
+@media (max-width : 750px) and (min-width : 478px){
     .container{
-        margin: 0 1rem;
+        margin: 0 2rem;
     
     }
 

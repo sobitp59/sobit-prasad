@@ -25,7 +25,7 @@
 
         <!-- Header -->
         <header class="blog-header">
-            <img class="blog-header-image" src="blogimages/javascript-hoisting.png" alt="header-img" srcset="">
+            <img class="blog-header-image" data-lazy="blogimages/javascript-hoisting.png" alt="header-img" srcset="">
             
             <div class="blog-intro">
                 <h2 class="blog-header-intro">hoisting in javascript<span class="blog-header-dot">.</span></h2><br>
@@ -147,38 +147,6 @@
                             </ul>
                         <p class="blog-detail">So, in both(using fat arrow and anonymous functions) the programs above, we have <span class="blog-bg">funcOne</span> as a variable. So when JS Engine will scan these programs, it will allocate memory as well as the default value of <span class="blog-bg">undefined</span> for line one. Now it will move to the next line and will assign the whole function to variable <span class="blog-bg">funcOne</span>. In the second-last line, we are console logging the variable <span class="blog-bg">funcOne</span> which holds the entire function in it, so it will print the whole code inside that function. Now, in the last line we are invoking <span class="blog-bg">funcOne</span> which will now act as a function rather than a variable and again the whole cycle will repeat.</p>    
                         <p class="blog-detail">So, that's it guys in this blog. In the next blog, we will talk about the variable declared using keywords <span class="blog-bg">let</span> and <span class="blog-bg">const</span>, and also we will travel around the <span class="blog-bold">Temporal Dead Zone</span>. Don't worry we will not die there. So, till then see you in the <a class="prev-blog" href="https://sobitprasad.hashnode.dev/javascript-let-const-and-the-temporal-dead-zone">next blog</a>.</p>    
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                     </div>
                <!-- </article>  -->
@@ -198,6 +166,6 @@
             </ul>
         </footer>
     </div>
-    
+    <script src="app.js"></script>
 </body>
 </html>

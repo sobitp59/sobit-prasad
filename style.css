@@ -11,7 +11,6 @@
 --all-radius : 0.8rem;
 --navbrand-margin : 0 1rem;
 --padding-bottom : 3rem;
-/* font */
 --navbrand-font : 1.8rem;
 }
 
@@ -33,7 +32,6 @@
     width: 100%;
     background-color: var(--primary-color);
     padding: var(--nav-pad);
-    /* margin: var(--navbrand-margin); */
     border-bottom-left-radius: var(--all-radius);
     border-bottom-right-radius: var(--all-radius);
 }
@@ -64,7 +62,6 @@
     color: var(--secondary-color);
     text-decoration: none;
     margin-left: 3rem;
-    /* padding: 1rem; */
 }
 .list .link-active{
     font-weight: 700;
@@ -72,8 +69,6 @@
 }
 
 .link{
-    /* width: 9rem;
-    height: 3rem; */
     padding: 1rem;
     border-radius: 1rem;  
 }
@@ -147,9 +142,7 @@
 
 /* Section */
 .section{
-    /* padding: 0 8rem; */
     height: 15rem;
-    /* padding-bottom: 3rem;    */
     margin-bottom: 1rem;
     border-radius: 0.5rem;
 }
@@ -161,7 +154,6 @@
 .sec-head{
     text-align: center;
     padding-top: 2rem;
-    /* margin-top: 2rem; */
     font-size: 1.5rem;
 }
 .sec1,.sec3 .sec-head{
@@ -184,7 +176,6 @@
 }
 
 .section .p1,.p3{
-    /* color: var(--active-color); */
     color: var(--primary-color);
 }
 .secdiv{
@@ -202,10 +193,8 @@
 }
 .p-button{
     padding: 0.9rem;
-    /* background-color: var(--active-color); */
     background-color: var(--primary-color);
     border: none;
-    /* margin-top: 1.5rem; */
     margin: 0.5rem;
     border-radius: 1rem;
     box-shadow: 0 12px 12px -11px #112240;
@@ -214,19 +203,13 @@
 .p-button a{
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 600;
-    /* color: var(--primary-color); */
     color: white;
 }
 
 .p-button2{
     padding: 0.9rem;
-    border: 2px solid var(--primary-color);
-    /* border: none;
-    margin-top: 1rem;
-    border-radius: 1rem;*/
+    border: 1px solid var(--primary-color);
     border-radius: 1rem;
-    /* margin-top: 1.5rem; */
     margin: 0.5rem;
     background-color: transparent; 
 }
@@ -236,7 +219,7 @@
     text-decoration: none;
     color: var(--primary-color);
     font-size: 1rem;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 
@@ -246,7 +229,6 @@
     width: 100%;
     background-color: var(--primary-color);
     padding: var(--nav-pad);
-    /* margin: var(--nav-margin); */
     margin-top: 3rem;
     border-top-left-radius: var(--all-radius);
     border-top-right-radius: var(--all-radius);
@@ -264,7 +246,6 @@
 }
 
 .social{
-    /* padding: 0 15rem; */
     height: 2rem;
     list-style: none;
     display: flex;
@@ -292,14 +273,12 @@
 .social-link:hover{
     background-color: #ffffff18;
     transition: 0.5s ease all;
-    /* background-color: #ffffff28; */
 
 }
 
 
 .project-list{
     text-align: center;
-    /* font-size: 32px; */
 }
 
 .small1{
@@ -328,19 +307,12 @@
 
     .header-intro .header-intro-middle{
         font-size: 1.8rem;
-        /* text-align: left; */
-        /* text-align: justify; */
     }
 
     .header-intro .header-intro-top{
         font-size: 1rem;
         font-weight: 300;
-        /* line-height: 1.4rem; */
-
     }
-    /* .header-intro .header-main{
-        text-align: left;
-    } */
 
     .p-btn{
         margin-top: 1.5rem;
@@ -353,14 +325,11 @@
     .header-intro-bottom{
         margin: 0 0.35rem;
         text-align: start;
-        /* word-break: break-all; */
     }
 
     /* Section */
     .section{
         height: 20rem;
-        /* padding: 6rem; */
-        /* padding-bottom: 5rem; */
     }
 
     .section .sec-head{
@@ -371,9 +340,6 @@
         font-size: 1rem;
         text-align: start;
     }
-    /* .social .social-list{
-        margin-top: 1rem;
-    } */
 
     .social .social-link{
         font-size: 0.9rem;
@@ -395,8 +361,6 @@
     }
 
     .link{
-        /* width: 9rem;
-        height: 3rem; */
         padding: 0.8rem;
         border-radius: 0.8rem;  
     }
@@ -425,8 +389,6 @@
         
     }
     .link{
-        /* width: 9rem;
-        height: 3rem; */
         padding: 0.8rem;
         border-radius: 0.8rem;  
     }
@@ -455,9 +417,6 @@
 
 
 /* --------- BLOGS STYLING START ------------ */
-/* .blog-header{
-    padding-bottom: var(--padding-bottom);
-} */
 .blog-header-image{
     max-width: 90%;
     width: 900px;

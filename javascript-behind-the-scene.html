@@ -25,7 +25,7 @@
 
         <!-- Header -->
         <header class="blog-header">
-            <img class="blog-header-image" data-lazy="blogimages/JavaScript-Behind-The-Scene-Banner.png" alt="header-img" srcset="" loading="lazy">
+            <img class="blog-header-image" src="blogimages/JavaScript-Behind-The-Scene-Banner.png" alt="header-img" srcset="" loading="lazy">
             
             <div class="blog-intro">
                 <h2 class="blog-header-intro">javascript : behind the scene<span class="blog-header-dot">.</span></h2><br>
@@ -49,7 +49,7 @@
                          <p class="blog-detail">In Memory Component, all the values of the variables are assigned in a key-value pair as simple as that.</p>    
                          <h5 class="blog-topics-ex">code component<span class="blog-topics-dot">.</span></h5>
                          <p class="blog-detail">In Code Component, our code gets executed line by line in a specific order. We will understand it more deeply when we will talk about the phases that occur when we run our code. But for now, just keep in mind that when we run our code, an Execution Context is created and it has two components - memory and code component.</p>    
-                         <img class="blog-header-image" data-lazy="blogimages/blog-img-1.png" alt="header-img" srcset="" loading="lazy">
+                         <img class="blog-header-image" src="blogimages/blog-img-1.png" alt="header-img" srcset="" loading="lazy">
 
 
                          <!-- What after the Execution Context? -->
@@ -73,17 +73,17 @@
                                     <li class="blog-code-line"><span class="code-col">var</span> c = cube(a);</li>
                                 </ul>
                         <p class="blog-detail">Now when we run this code an Execution Context is created and inside the Execution Context it has to go through two phases - <span class="blog-bold">MEMORY CREATION PHASE</span> and <span class="blog-bold">CODE EXECUTION PHASE</span>. First, it will go through Memory Creation Phase and assign the memory to all the variables. It will assign <span class="blog-bg">undefined</span> to variable <span class="blog-bg">a</span> and <span class="blog-bg">c</span> and also it will assign the whole code inside function <span class="blog-bg">cube</span> to <span class="blog-bg">cube</span>.</p>    
-                        <img class="blog-header-image" data-lazy="blogimages/blog-img-2.png" alt="header-img" srcset="" loading="lazy">
+                        <img class="blog-header-image" src="blogimages/blog-img-2.png" alt="header-img" srcset="" loading="lazy">
                         <p class="blog-detail">Now, here comes the Second Phase i.e. the <span class="blog-bold">Code Execution Phase</span>. In this phase, our code will run line by line. So, when it goes to the first line, it will assign <span class="blog-bg">7</span> to variable <span class="blog-bg">a</span>. Now, it will move to the next line and founds that there is nothing to execute so it will jump to the sixth line. Now, the sixth line is invoking the function <span class="blog-bg">cube</span> with parameter <span class="blog-bg">a</span> which holds the value <span class="blog-bg">7</span>. Now, whenever a new <span class="blog-bg">function</span> is invoked, another <span class="blog-bold">execution context</span> is created inside the previous one and again it will follow the same procedure.</p>    
-                        <img class="blog-header-image" data-lazy="blogimages/blog-img-3.png" alt="header-img" srcset="" loading="lazy">
+                        <img class="blog-header-image" src="blogimages/blog-img-3.png" alt="header-img" srcset="" loading="lazy">
                         <p class="blog-detail">Now in this execution context (i.e. the execution context inside the Global Execution Context), again it has to go through <span class="blog-bold">Memory Creation Phase</span> and <span class="blog-bold">Code Execution Phase</span>. In Memory Creation Phase, it will assign <span class="blog-bg">undefined</span> to variables <span class="blog-bg">n</span> and <span class="blog-bg">b</span>. Now, it will move to the next phase i.e. the Code Execution Phase. In this phase, variable <span class="blog-bg">n</span> will be assigned with value <span class="blog-bg">a</span> because it was the <span class="blog-bg">parameter</span> of the function <span class="blog-bg">cube</span> with variable <span class="blog-bg">c</span>, now <span class="blog-bg">a</span> will be replaced by <span class="blog-bg">7</span> which is taken from the <span class="blog-bold">Global Execution Context</span>. Now finally the output of variable <span class="blog-bg">b</span> i.e <span class="blog-bg">343</span> will be returned to variable <span class="blog-bg">c</span> in the Global Execution Context. Now after that, firstly the <span class="blog-bold">Local Execution Context</span> will be deleted and after returning the value of variable <span class="blog-bg">c</span>, the <span class="blog-bold">Global Execution Context</span> will also be <span class="blog-bg">deleted</span>.</p>    
-                        <img class="blog-header-image" data-lazy="blogimages/blog-img-4.png" alt="header-img" srcset="" loading="lazy">
+                        <img class="blog-header-image" src="blogimages/blog-img-4.png" alt="header-img" srcset="" loading="lazy">
                         <p class="blog-detail">Now, if you are wondering how JavaScript handles all this, I mean this is a lot. Suppose if we invoke a <span class="blog-bg">function</span> inside another <span class="blog-bg">function</span> and again inside another <span class="blog-bg">function</span>, a number of <span class="blog-bold">'Execution Context'</span> will be created, but all this handles by JavaScript very beautifully. So how does it happen? Ladies and Gentlemen, give a big round of applauding to none other than our very dear <span class="blog-bold">CALLSTACK</span>.</p>    
     
 
                         <!-- CallStack: The Game Changer -->
                         <h4 class="blog-topics">callstack: the game changer<span class="blog-topics-dot">.</span></h4>
-                        <img class="blog-header-image" data-lazy="blogimages/blog-img-5.png" alt="header-img" srcset="" loading="lazy">
+                        <img class="blog-header-image" src="blogimages/blog-img-5.png" alt="header-img" srcset="" loading="lazy">
                         <p class="blog-detail">We know that JavaScript is a <span class="blog-bold">synchronous single-threaded</span> programming language and thus it has only one CALLSTACK which means that it can perform only one command at a time in a specific order. So, <span class="blog-bold">what basically CALLSTACK does do?</span></p>    
                         <p class="blog-detail">CALLSTACK maintains the <span class="blog-bold">order of execution</span> of EXECUTION CONTEXT which means that when we run our code the global execution context that is created at first will be pushed to the stack first and again if another function is invoked/called, it will be pushed at the top of CALLSTACK and again if another function is invoked it will be pushed to the top. Now when the task of the <span class="blog-bg">function</span> at the top is completed it will be removed from the stack and at the end, the Global Execution Context is deleted.</p>    
                         <p class="blog-detail">This is how it looks Behind The Scene of JavaScript. Isn't it amazing? If you are reading till here, thank you so much for that, I appreciate it. That's it int this blog. Till then, see you in the <a class="prev-blog" href="hoisting-in-javascript.html">next blog</a>.</p>    
@@ -108,6 +108,5 @@
             </ul>
         </footer>
     </div>
-    <script src="app.js"></script>
 </body>
 </html>
